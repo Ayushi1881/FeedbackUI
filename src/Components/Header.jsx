@@ -1,4 +1,4 @@
-
+import logo from './image/logo.png';
 
 function Header() {
   return (
@@ -6,7 +6,7 @@ function Header() {
     <div className="">
     <div className="navbar bg-black">
   <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl">FeedbackUI</a>
+    <a className="" href='https://github.com/Ayushi1881/FeedbackUI'><img src={logo} className="h-30 w-20 " alt="feedbackUI" /></a>
   </div>
   <div className="flex-none gap-2">
     <div className="form-control">
