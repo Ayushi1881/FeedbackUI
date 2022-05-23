@@ -1,39 +1,21 @@
 import logo from './image/logo.png';
+import PropTypes from 'prop-types'
 
-function Header() {
+function Header({text}) {
   return (
-    <>
-    <div className="">
-    <div className="navbar bg-black">
-  <div className="flex-1">
-    <a className="" href='https://github.com/Ayushi1881/FeedbackUI'><img src={logo} className="h-30 w-20 " alt="feedbackUI" /></a>
-  </div>
-  <div className="flex-none gap-2">
-    <div className="form-control">
-      <input type="text" placeholder="Search" className="input input-bordered"/>
-    </div>
-    <div className="dropdown dropdown-end">
-      <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img src="https://media-exp1.licdn.com/dms/image/D4E35AQFRkE4VZyzTfg/profile-framedphoto-shrink_100_100/0/1643469776400?e=1646161200&v=beta&t=6emJ8l2dxA4lyuCeD-PdyMLAFKRQVscqFyV9h8WrKJY"/>
-        </div>
-      </label>
-      <ul tabindex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-    </div>
-    </>
+    <header className='bg-blue-900 text-center py-2'>
+      <div  className='text-2xl text-red-400'>
+        <h2>{text}</h2>
+      </div>
+    </header>
   )
+}
+
+Header.defaultProps = {
+  text: 'Feedback UI',
+}
+Header.propTypes = {
+  text: PropTypes.string,
 }
 
 export default Header;
