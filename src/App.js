@@ -11,7 +11,7 @@ function App(){
     return (
       <>
         <Header/>
-        <div className=''>
+        <div className='bg-indigo-900 h-screen'>
         <FeedbackList feedback={feedback}/>
         </div>
       </>
