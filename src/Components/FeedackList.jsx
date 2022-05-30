@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FeedBackItem from './FeedBackItem'
-function FeedackList({feedback}) {
+function FeedackList({feedback, handleDelete}) {
     if(!feedback || feedback.length === 0){
     return <p>No feedback yet</p>
 }
@@ -12,7 +12,7 @@ function FeedackList({feedback}) {
           <FeedBackItem
            key={item.id}
            item={item}
-           handleDelete={(id) => console.log(id)}
+           handleDelete={handleDelete}
            />
       </div>
       )
