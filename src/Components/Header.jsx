@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 function Header({text}) {
   return (
-    <header className='bg-stone-900 text-center py-2'>
-      <div  className='text-2xl font-bold text-fuchsia-400 font-serif'>
+    <header className='bg-stone-900 py-2 navbar'>
+      <div  className='font-bold text-fuchsia-400 font-serif btn btn-ghost normal-case text-xl'>
         <h2>{text}</h2>
       </div>
     </header>
