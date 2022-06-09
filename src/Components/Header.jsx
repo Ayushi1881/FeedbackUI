@@ -1,4 +1,3 @@
-import logo from './image/logo.png';
 import PropTypes from 'prop-types'
 
 function Header({text}) {

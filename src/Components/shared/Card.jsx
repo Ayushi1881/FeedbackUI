@@ -1,11 +1,7 @@
-
 import PropTypes from 'prop-types'
 function Card({ children, reverse}) {
   return (
-    <div className="bg-white m-5 rounded-md flex" style={{
-        backgroundColor: reverse ? 'rgba(0,0,0,0.4)' : '#fff',
-        color: reverse ? '#fff' : '#000',
-    }}>{children}</div>
+    <div className={`bg-white text-black m-5 rounded-md flex ${reverse && "text-white bg-black m-5 rounded-md flex"}`}>{children}</div>
   )
 }
 

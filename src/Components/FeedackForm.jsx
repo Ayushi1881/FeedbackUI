@@ -1,42 +1,59 @@
 import { useState } from 'react'
 import Card from './shared/Card'
 import Button from './shared/Button'
+import RatingSelect from './RatingSelect'
 
-function FeedackForm() {
-  const {text, setText} = useState('')
-  const {btnDisabled, setBtnDisabled} = useState(true)
-  const {message, setMessage} = useState('Hello')
+function FeedackForm({handleAdd}) {
+  
+  const [text, setText] = useState('')
+  const [rating, setRating] = useState(10)
+  const [btnDisabled, setBtnDisabled] = useState(true)
+  const [message, setMessage] = useState([])
 
   const handleTextChange = (e) => {
+    
     if(text === '') {
+      console.log('str')
       setBtnDisabled(true)
-      setMessage(null)
-    } else if(text!=='' && text.trim().length <=10 ){
-      setMessage('Text Message should be atleast 10 character')
+      setMessage(null);
+    } else if(text !== '' && text.trim().length <= 10 ){
+      console.log('mid')
+      setMessage('Text Message should be atleast 10 character');
       setBtnDisabled(true)
     } else{
-      setMessage(null)
+      console.log('str585')
+      setMessage(null);
       setBtnDisabled(false)
     }
     setText(e.target.value)
  }
-  return <Card>
-      <form className='font-bold ml-24 text-center'>
-        <h2>
+ const handleSubmit =(e) =>{
+   e.preventDefault()
+   if(text.trim().length >10){
+     const newFeedback = {
+       text,
+       rating,
+     }
+     handleAdd(newFeedback)
+     setText('')
+   }
+ }
+  return (
+    <Card>
+      <form onSubmit={handleSubmit}>
+        <h2 className='font-bold ml-24 text-center p-2 text-indigo-700 animate-pulse text-2xl'>
           How would you rate your service with us?
         </h2>
-      <div className='m-2 border-2 border-indigo-700 p-2 rounded-md'>
+        <RatingSelect select={(rating) => setRating(rating)}/>
+      <div className='border-2 border-fuchsia-600 rounded-md w-72 flex mx-20 m-4 p-2'>
           <input 
           onChange={handleTextChange}
-          type="text" 
-          placeholder='Write a review'
-          value={text}
           />
-          <Button type='submit' isDisabled={btnDisabled}>Send</Button>
+          <Button type='submit' isDisabled={btnDisabled} version='secondary' >Send</Button>
       </div>
-      {message && <div className='text-red-900 '>{message}</div>}
+      {message && <div className='text-red-900'>{message}</div>}
       </form>
-  </Card>
+  </Card>)
 }
 
 export default FeedackForm

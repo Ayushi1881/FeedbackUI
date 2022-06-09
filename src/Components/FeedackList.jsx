@@ -6,15 +6,14 @@ function FeedackList({feedback, handleDelete}) {
     return <p>No feedback yet</p>
 }
 
-  return <div className=''> {
+  return <div> {
       feedback.map((item) =>
-      <div>
-          <FeedBackItem
-           key={item.id}
+      (<div>
+          <FeedBackItem key={item.id}
            item={item}
            handleDelete={handleDelete}
            />
-      </div>
+      </div>)
       )
   } </div>
 
