@@ -1,14 +1,18 @@
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import Card from './shared/Card'
 import Button from './shared/Button'
 import RatingSelect from './RatingSelect'
+import FeedbackContext from '../context/FeedbackContext'
 
-function FeedackForm({handleAdd}) {
+
+function FeedackForm() {
   
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
-  const [message, setMessage] = useState([])
+  const [message, setMessage] = useState('')
+
+  const {addFeedback} = useContext(FeedbackContext)
 
   const handleTextChange = (e) => {
     
@@ -34,14 +38,14 @@ function FeedackForm({handleAdd}) {
        text,
        rating,
      }
-     handleAdd(newFeedback)
+     addFeedback(newFeedback)
      setText('')
    }
  }
   return (
     <Card>
       <form onSubmit={handleSubmit}>
-        <h2 className='font-bold ml-24 text-center p-2 text-lime-500 animate-pulse text-2xl'>
+        <h2 className='font-bold text-center text-lime-500 animate-pulse text-2xl'>
           How would you rate your service with us?
         </h2>
         <RatingSelect select={(rating) => setRating(rating)}/>
@@ -51,7 +55,7 @@ function FeedackForm({handleAdd}) {
           />
           <Button type='submit' isDisabled={btnDisabled} >Send</Button>
       </div>
-      {message && <div className='m-2 text-red-900'>{message}</div>}
+      {message && <div className='m-5 text-red-500'>{message}</div>}
       </form>
   </Card>)
 }

@@ -1,7 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { useContext } from 'react'
 import FeedBackItem from './FeedBackItem'
-function FeedackList({feedback, handleDelete}) {
+import FeedbackContext from '../context/FeedbackContext'
+function FeedackList() {
+    const{feedback} = useContext(FeedbackContext)
     if(!feedback || feedback.length === 0){
     return <p>No feedback yet</p>
 }
@@ -11,7 +12,6 @@ function FeedackList({feedback, handleDelete}) {
       (<div>
           <FeedBackItem key={item.id}
            item={item}
-           handleDelete={handleDelete}
            />
       </div>)
       )
@@ -19,15 +19,5 @@ function FeedackList({feedback, handleDelete}) {
 
 }
 
-FeedackList.propTypes = {
-    feedback: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            text: PropTypes.string.isRequired,
-            rating: PropTypes.number.isRequired,
-
-        })
-    )
-}
 
 export default FeedackList
