@@ -49,7 +49,7 @@ function FeedackForm({handleAdd}) {
           <input 
           onChange={handleTextChange}
           />
-          <Button type='submit' isDisabled={btnDisabled} version='secondary' >Send</Button>
+          <Button type='submit' isDisabled={btnDisabled} >Send</Button>
       </div>
       {message && <div className='m-2 text-red-900'>{message}</div>}
       </form>

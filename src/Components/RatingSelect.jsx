@@ -15,7 +15,7 @@ function RatingSelect({select}) {
       value='1'
       onChange={handleChange}
       checked={selected===1}
-      className='radio radio-secondary'
+      className='radio border-black border-4 bg-lime-200'
       />
       <label htmlFor="num1" className='p-2 relative right-6 bottom-1.5 text-xs'>1</label>
     </li>
@@ -27,7 +27,7 @@ function RatingSelect({select}) {
       onChange={handleChange}
       checked={selected===2}
       
-      className='radio radio-secondary'
+      className='radio border-black border-4 bg-lime-200'
       />
       <label htmlFor="num2"  className='p-2 relative right-6 bottom-1.5 text-xs'>2</label>
     </li>
@@ -38,7 +38,7 @@ function RatingSelect({select}) {
       value='3'
       onChange={handleChange}
       checked={selected===3}
-      className='radio radio-accent'
+      className='radio border-black border-4 bg-lime-200'
       />
       <label htmlFor="num3" className='p-2 relative right-6 bottom-1.5 text-xs'>3</label>
     </li>
@@ -49,8 +49,7 @@ function RatingSelect({select}) {
       value='4'
       onChange={handleChange}
       checked={selected===4}
-      className='radio radio-acce'
-      />
+      className='radio border-black border-4 bg-lime-200' />
       <label htmlFor="num4" className='p-2 relative right-6 bottom-1.5 text-xs'>4</label>
     </li>
     <li className='p-3 px-5'>
@@ -60,7 +59,7 @@ function RatingSelect({select}) {
       value='5'
       onChange={handleChange}
       checked={selected===5}
-      className='radio radio-secondary'
+      className='radio border-black border-4 bg-lime-200'
       />
       <label htmlFor="num5" className='p-2 relative right-6 bottom-1.5 text-xs'>5</label>
     </li>
@@ -71,7 +70,7 @@ function RatingSelect({select}) {
       value='6'
       onChange={handleChange}
       checked={selected===6}
-      className='radio radio-secondary'
+      className='radio border-black border-4 bg-lime-200'
       />
       <label htmlFor="num6" className='p-2 relative right-6 bottom-1.5 text-xs'>6</label>
     </li>
@@ -82,7 +81,7 @@ function RatingSelect({select}) {
       value='7'
       onChange={handleChange}
       checked={selected===7}
-      className='radio radio-secondary'
+      className='radio border-black border-4 bg-lime-200'
       />
       <label htmlFor="num7" className='p-2 relative right-6 bottom-1.5 text-xs'>7</label>
     </li>
@@ -93,7 +92,7 @@ function RatingSelect({select}) {
       value='8'
       onChange={handleChange}
       checked={selected===8}
-      className='radio radio-secondary'
+      className='radio border-black border-4 bg-lime-200'
       />
       <label htmlFor="num8" className='p-2 relative right-6 bottom-1.5 text-xs'>8</label>
     </li>
@@ -104,7 +103,7 @@ function RatingSelect({select}) {
       value='9'
       onChange={handleChange}
       checked={selected===9}
-      className='radio radio-secondary'
+      className='radio border-black border-4 bg-lime-200 text-2xl'
       />
       <label htmlFor="num9" className='p-2 relative right-6 bottom-1.5 text-xs'>9</label>
     </li>
@@ -115,7 +114,7 @@ function RatingSelect({select}) {
       value='10'
       onChange={handleChange}
       checked={selected===10}
-      className='radio radio-secondary animate-bounce'
+      className='radio border-black border-4 bg-lime-200 animate-bounce'
       />
       <label htmlFor="num10" className='p-2 relative right-6 bottom-2 text-xs'>10</label>
     </li>
