@@ -1,10 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { useState } from 'react'
 import Header from "./Components/Header";
 import FeedbackList from './Components/FeedackList';
 import FeedBackData from './data/FeedbackData';
 import FeedbackStats from './Components/FeedbackStats';
 import FeedackForm from './Components/FeedackForm';
+import AboutIconLink from './Components/AboutIconLink';
+import  AboutPages  from './pages/AboutPages';
 
 function App(){
   const [feedback, setFeedback ] = useState(FeedBackData)
@@ -20,15 +23,25 @@ function App(){
     }
   }
     return (
-      <>
+      <Router>
         <Header/>
-        <div className='bg-indigo-900 h-screen'>
-          <FeedackForm handleAdd={addFeedback} />
-          <FeedbackStats feedback={feedback}/>
-          <FeedbackList feedback={feedback}
-          handleDelete={deleteFeedback} />
+        <div className='bg-stone-900 h-screen'>
+          <Routes>
+          <Route exact path='/' element={
+            <>
+                      <FeedackForm handleAdd={addFeedback} />
+                      <FeedbackStats feedback={feedback}/>
+                      <FeedbackList feedback={feedback}
+                      handleDelete={deleteFeedback} />
+            </>
+          }>
+          </Route>
+
+          <Route path='/about' element={<AboutPages />} />
+          </Routes>
+          <AboutIconLink />
         </div>
-      </>
-    );
+      </Router>
+    )
 }
 export default App

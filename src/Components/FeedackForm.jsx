@@ -41,17 +41,17 @@ function FeedackForm({handleAdd}) {
   return (
     <Card>
       <form onSubmit={handleSubmit}>
-        <h2 className='font-bold ml-24 text-center p-2 text-indigo-700 animate-pulse text-2xl'>
+        <h2 className='font-bold ml-24 text-center p-2 text-lime-500 animate-pulse text-2xl'>
           How would you rate your service with us?
         </h2>
         <RatingSelect select={(rating) => setRating(rating)}/>
-      <div className='border-2 border-fuchsia-600 rounded-md w-72 flex mx-20 m-4 p-2'>
+      <div className='border-2 border-lime-600 rounded-md w-72 flex mx-20 m-4 p-2'>
           <input 
           onChange={handleTextChange}
           />
           <Button type='submit' isDisabled={btnDisabled} version='secondary' >Send</Button>
       </div>
-      {message && <div className='text-red-900'>{message}</div>}
+      {message && <div className='m-2 text-red-900'>{message}</div>}
       </form>
   </Card>)
 }

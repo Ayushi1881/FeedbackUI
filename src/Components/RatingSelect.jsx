@@ -38,7 +38,7 @@ function RatingSelect({select}) {
       value='3'
       onChange={handleChange}
       checked={selected===3}
-      className='radio radio-secondary'
+      className='radio radio-accent'
       />
       <label htmlFor="num3" className='p-2 relative right-6 bottom-1.5 text-xs'>3</label>
     </li>
@@ -49,7 +49,7 @@ function RatingSelect({select}) {
       value='4'
       onChange={handleChange}
       checked={selected===4}
-      className='radio radio-secondary'
+      className='radio radio-acce'
       />
       <label htmlFor="num4" className='p-2 relative right-6 bottom-1.5 text-xs'>4</label>
     </li>
